@@ -15,6 +15,7 @@ fn main() -> Result<()> {
     println!("start ...");
 
     let mut app = App::new();
+    app.init_tab(4);
     let backend = CrosstermBackend::new(stderr());
     let terminal = Terminal::new(backend)?;
     let events = EventHandler::new(250);
