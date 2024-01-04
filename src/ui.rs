@@ -1,6 +1,5 @@
-use ratatui::{layout::Alignment, widgets::{Block, BorderType, Borders, Paragraph}, Frame, symbols};
+use ratatui::{Frame, layout::Alignment, symbols, widgets::{Block, Borders, BorderType, Paragraph}};
 use ratatui::prelude::{Style, Stylize};
-use ratatui::widgets::GraphType::Line;
 use ratatui::widgets::Tabs;
 
 use crate::app::App;
