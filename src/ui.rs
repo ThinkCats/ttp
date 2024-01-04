@@ -1,5 +1,6 @@
 use ratatui::{layout::Alignment, widgets::{Block, BorderType, Borders, Paragraph}, Frame, symbols};
 use ratatui::prelude::{Style, Stylize};
+use ratatui::widgets::GraphType::Line;
 use ratatui::widgets::Tabs;
 
 use crate::app::App;
@@ -26,10 +27,11 @@ pub fn render(app: &mut App, f: &mut Frame) {
     );
 
     f.render_widget(Tabs::new(vec!["Tab1", "Tab2", "Tab3", "Tab4"])
-                        .block(Block::default().title("Tabs").borders(Borders::ALL))
+                        .block(Block::default().borders(Borders::ALL))
                         .style(Style::default().white())
                         .highlight_style(Style::default().yellow())
                         .select(app.tab_state.tab_select as usize)
                         .divider(symbols::DOT)
-                        .padding("->", "<-"), f.size());
+                    , f.size());
+
 }
