@@ -4,11 +4,11 @@ pub struct App {
 
     pub mode: Mode,
     pub should_quit: bool,
-    pub tab_state: TabState,
+    pub tab_state: Tab,
 }
 
 #[derive(Debug, Default)]
-pub struct TabState {
+pub struct Tab {
     pub tab_total: i8,
     pub tab_select: i8,
 }
@@ -22,7 +22,7 @@ pub enum Mode {
     Help,
 }
 
-impl TabState {
+impl Tab {
     pub fn switch(&mut self, next: bool) {
         if next {
             let new_select = self.tab_select.saturating_add(1);
@@ -52,7 +52,7 @@ impl App {
     }
 
     pub fn init_tab(&mut self, tab_total: i8) {
-        let tab_state = TabState {
+        let tab_state = Tab {
             tab_total,
             tab_select: 0,
         };
